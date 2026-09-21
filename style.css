@@ -1,0 +1,30 @@
+*{box-sizing:border-box}
+:root{--bg:#050605;--panel:#0a0d0a;--line:#26391f;--green:#8df52a;--green2:#b6ff62;--muted:#8d9589;--red:#ff3b30}
+body{margin:0;background:radial-gradient(circle at 50% 0%,#14210e 0,#050605 45%);color:#edf3e9;font-family:Inter,Arial,sans-serif;min-height:100vh}
+.scanlines{position:fixed;inset:0;pointer-events:none;opacity:.035;background:repeating-linear-gradient(0deg,#fff 0,#fff 1px,transparent 1px,transparent 4px)}
+.wrap{width:min(920px,94%);margin:42px auto 60px}
+.receipt{background:linear-gradient(145deg,#0c110c,#070907);border:1px solid #314b26;border-radius:18px;padding:34px;box-shadow:0 0 50px #000,0 0 35px #7dff2810}
+.top,.receipt-title,.table-head,.item,.totals>div,footer{display:flex;justify-content:space-between;align-items:center;gap:20px}
+.brand{font-size:42px;font-weight:900;letter-spacing:5px;color:var(--green)}
+.brand span{font-size:12px;vertical-align:top;color:#a8b6a1}
+.tag{font-size:10px;letter-spacing:3px;color:#75806f;margin-top:2px}
+.status{border:1px solid #6d9f37;color:var(--green);padding:9px 13px;border-radius:8px;font-size:11px;font-weight:800;letter-spacing:1.4px}
+.divider{height:1px;background:linear-gradient(90deg,transparent,#4b702f,transparent);margin:25px 0}
+.eyebrow{font-size:11px;color:var(--green);letter-spacing:3px;margin:0 0 8px;font-weight:800}
+h1{font-size:30px;margin:0 0 7px;letter-spacing:1px}
+.muted{color:var(--muted);margin:0}
+.receipt-no{text-align:right}.receipt-no span{display:block;font-size:9px;color:#788172;letter-spacing:2px;margin-bottom:6px}.receipt-no strong{font-family:monospace;color:#c5d4bd}
+.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:28px 0}
+.info-card{background:#080b08;border:1px solid #202d1d;border-radius:10px;padding:15px}
+.info-card span{display:block;color:#707a6b;font-size:9px;letter-spacing:1.8px;margin-bottom:8px}.info-card strong{font-size:14px}.accent{color:var(--green2)}
+.items{border:1px solid #202d1d;border-radius:12px;overflow:hidden}
+.table-head{background:#101710;color:#74816f;font-size:9px;letter-spacing:2px;padding:12px 16px}
+.table-head span:last-child{width:150px;text-align:right}
+.item{padding:19px 16px;align-items:flex-start}.item>div{display:flex;flex-direction:column;gap:6px}.item strong:last-child{white-space:nowrap}.item small{color:#7e887a;font-size:11px}
+.totals{margin:24px 0 0 auto;width:min(420px,100%);border-top:1px solid #26351f;padding-top:7px}
+.totals>div{padding:10px 0;color:#899287;font-size:11px}.totals strong{color:#e7eee4;font-size:14px}.paid strong{color:#b6ff62}.balance{border-top:1px dashed #40543a;margin-top:5px;padding-top:15px!important}.balance span{color:#dce7d6;font-weight:800}.balance strong{font-size:21px;color:var(--green)}
+.notice{margin-top:26px;border-left:3px solid var(--green);background:#10160e;padding:15px 18px}.notice strong{font-size:10px;letter-spacing:2px;color:var(--green)}.notice p{margin:8px 0 0;color:#a3ada0;font-size:12px;line-height:1.65}
+footer{border-top:1px solid #202d1d;margin-top:28px;padding-top:20px}.footer strong,footer strong{display:block;color:#cbd8c5;font-size:12px}.footer span,footer span{display:block;color:#697466;font-size:9px;margin-top:4px}.verified{font-size:9px;letter-spacing:1.5px;color:#7da95a}
+.actions{display:flex;justify-content:center;gap:10px;margin-top:18px}.actions button{background:#101610;border:1px solid #355226;color:#b8ff76;padding:12px 16px;border-radius:9px;font-weight:800;cursor:pointer}.actions button:hover{border-color:#82d94b;background:#14200f}.copied{text-align:center;color:#8ed95a;font-size:11px;height:16px}
+@media(max-width:650px){.receipt{padding:22px}.top,.receipt-title,footer{align-items:flex-start;flex-direction:column}.status{align-self:flex-start}.receipt-no{text-align:left}.info-grid{grid-template-columns:1fr}.brand{font-size:34px}.item{gap:10px}.item>strong{font-size:13px}.actions{flex-direction:column}.actions button{width:100%}}
+@media print{body{background:#fff;color:#111}.scanlines,.actions,.copied{display:none}.wrap{width:100%;margin:0}.receipt{box-shadow:none;border:1px solid #aaa;background:#fff;color:#111}.brand{color:#222}.tag,.muted,.info-card span,.table-head,.item small,.totals>div,.notice p,footer span{color:#555}.info-card,.items{border-color:#ccc}.status{color:#111;border-color:#888}.divider{background:#aaa}.notice{background:#f4f4f4;border-color:#222}}

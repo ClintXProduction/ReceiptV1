@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CLTX4 • E-Receipt</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="scanlines"></div>
+
+  <main class="wrap">
+    <section class="receipt">
+      <header class="top">
+        <div>
+          <div class="brand">CLTX4<span>™</span></div>
+          <div class="tag">BUILD. FLASH. HACK.</div>
+        </div>
+        <div class="status">PARTIAL PAYMENT</div>
+      </header>
+
+      <div class="divider"></div>
+
+      <section class="receipt-title">
+        <div>
+          <p class="eyebrow">ELECTRONIC RECEIPT</p>
+          <h1>ORDER CONFIRMATION</h1>
+          <p class="muted">Thank you for your order.</p>
+        </div>
+        <div class="receipt-no">
+          <span>RECEIPT NO.</span>
+          <strong id="receiptNo">CLTX4-20260921-001</strong>
+        </div>
+      </section>
+
+      <section class="info-grid">
+        <div class="info-card">
+          <span>CUSTOMER</span>
+          <strong>Marv's Latra</strong>
+        </div>
+        <div class="info-card">
+          <span>DATE</span>
+          <strong>September 21, 2026</strong>
+        </div>
+        <div class="info-card">
+          <span>PAYMENT STATUS</span>
+          <strong class="accent">₱2,500 PAID</strong>
+        </div>
+      </section>
+
+      <section class="items">
+        <div class="table-head">
+          <span>ITEM</span>
+          <span>AMOUNT</span>
+        </div>
+
+        <div class="item">
+          <div>
+            <strong>ESP32 2.8&quot; Touch Screen — Full Set V2</strong>
+            <small>CLTX4 custom configuration • 1 unit</small>
+          </div>
+          <strong>₱5,000.00</strong>
+        </div>
+      </section>
+
+      <section class="totals">
+        <div><span>ORDER TOTAL</span><strong>₱5,000.00</strong></div>
+        <div class="paid"><span>PAYMENT RECEIVED</span><strong>− ₱2,500.00</strong></div>
+        <div class="balance"><span>REMAINING BALANCE</span><strong>₱2,500.00</strong></div>
+      </section>
+
+      <div class="notice">
+        <strong>PAYMENT NOTE</strong>
+        <p>This receipt confirms an initial 50% payment of <b>₱2,500.00</b>.
+        The remaining <b>₱2,500.00</b> is due before the order is considered fully paid.</p>
+      </div>
+
+      <footer>
+        <div>
+          <strong>CLTX4™</strong>
+          <span>Educational / Research & DIY Development</span>
+        </div>
+        <div class="verified">✓ RECEIPT GENERATED</div>
+      </footer>
+    </section>
+
+    <div class="actions">
+      <button onclick="window.print()">PRINT / SAVE PDF</button>
+      <button onclick="copyReceipt()">COPY RECEIPT DETAILS</button>
+    </div>
+
+    <p id="copied" class="copied"></p>
+  </main>
+
+<script>
+function copyReceipt() {
+  const text = `CLTX4™ E-RECEIPT
+Customer: Marv's Latra
+Item: ESP32 2.8" Touch Screen — Full Set V2
+Order Total: ₱5,000.00
+Payment Received: ₱2,500.00
+Remaining Balance: ₱2,500.00
+Status: PARTIAL PAYMENT
+Receipt No.: CLTX4-20260921-001`;
+  navigator.clipboard.writeText(text).then(() => {
+    document.getElementById("copied").textContent = "Receipt details copied.";
+    setTimeout(() => document.getElementById("copied").textContent = "", 2500);
+  });
+}
+</script>
+</body>
+</html>
